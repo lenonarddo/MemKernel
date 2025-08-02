@@ -3,9 +3,8 @@ ifneq ($(KERNELRELEASE),)
 	obj-$(CONFIG_MEMKERNEL)  := memkernel.o
 	memkernel-y := memory.o process.o entry.o
 else
-ifeq ($(KDIR),)
-	$(Error: KDIR is not set.)
-endif
+
+@echo $(KDIR)
 default:
 	make -C $(KDIR) M=$(PWD) modules
 clean:
