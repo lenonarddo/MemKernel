@@ -4,6 +4,7 @@ ifneq ($(KERNELRELEASE),)
 	memkernel-y := memory.o process.o entry.o
 else
 # normal makefile
+echo $(KDIR)
 ifeq ($(KDIR),)
 	$(Error: KDIR is not set.)
 endif
